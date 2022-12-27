@@ -16,38 +16,52 @@
         }
 
         function playRound(playerSelection, computerSelection) {
-            playerSelection = prompt("rock, paper, or scissors?").toLowerCase();
             console.log("playerSelection: " + playerSelection);
             console.log("computerSelection: " + computerSelection);
             if (playerSelection === "rock" && computerSelection === "paper") {
-                return "You lose! Paper beats Rock";
+                console.log("You lose! Paper beats Rock");
             }
             else if (playerSelection === "rock" && computerSelection === "scissors") {
-                return "You win! Rock beats Scissors";
+                console.log("You win! Rock beats Scissors");
+                return "win";
             }
             else if (playerSelection === "paper" && computerSelection === "rock") {
-                return "You win! Paper beats Rock";
+                console.log("You win! Paper beats Rock");
+                return "win";
             }
             else if (playerSelection === "paper" && computerSelection === "scissors") {
-                return "You lose! Scissors beats Paper";
+                console.log("You lose! Scissors beats Paper");
             }
             else if (playerSelection === "scissors" && computerSelection === "rock") {
-                return "You lose! Rock beats Scissors";
+                console.log("You lose! Rock beats Scissors");
             }
             else if (playerSelection === "scissors" && computerSelection === "paper") {
-                return "You win! Scissors beats Paper";
+                console.log("You win! Scissors beats Paper");
+                return "win";
             }
             else if (playerSelection === computerSelection) {
-                return "Tie!"
+                console.log("Tie!");
             }
             else {
-                return "Invalid Input";
+                console.log("Invalid Input");
             }
         }
 
-        const playerSelection = "rock";
-        const computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
+        function game() {
+            let wins = 0;
+            const rounds = 5;
+            for (let i = 0; i < rounds; i++){
+                playerSelection = prompt("rock, paper, or scissors?").toLowerCase();
+                const computerSelection = getComputerChoice();
+                let result = playRound(playerSelection, computerSelection);
+                if (result === "win") {
+                    wins++;
+                }
+            }
+            return wins;
+        }
+
+        console.log(game());
     </script>
 </head>
 <body>
