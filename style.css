@@ -1,0 +1,64 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: sans-serif;
+}
+
+.container {
+    margin: 50px 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.options-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 150px;
+}
+
+.option {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 150px;
+    height: 150px;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    gap: 20px;
+}
+
+#rock.option {
+    background-image: url("images/icons8-rock.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#paper.option {
+    background-image: url("images/icons8-paper.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#scissors.option {
+    background-image: url("images/icons8-scissors.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#reset {
+    padding: 10px;
+    width: 300px;
+    align-self: center;
+}

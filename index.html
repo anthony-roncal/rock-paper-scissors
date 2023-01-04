@@ -5,66 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <script>
-        let getComputerChoice = () => {
-            let random = Math.floor(Math.random() * 3);
-            switch (random) {
-                case 0: return "rock";
-                case 1: return "paper";
-                default: return "scissors";
-            }
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            console.log("playerSelection: " + playerSelection);
-            console.log("computerSelection: " + computerSelection);
-            if (playerSelection === "rock" && computerSelection === "paper") {
-                console.log("You lose! Paper beats Rock");
-            }
-            else if (playerSelection === "rock" && computerSelection === "scissors") {
-                console.log("You win! Rock beats Scissors");
-                return "win";
-            }
-            else if (playerSelection === "paper" && computerSelection === "rock") {
-                console.log("You win! Paper beats Rock");
-                return "win";
-            }
-            else if (playerSelection === "paper" && computerSelection === "scissors") {
-                console.log("You lose! Scissors beats Paper");
-            }
-            else if (playerSelection === "scissors" && computerSelection === "rock") {
-                console.log("You lose! Rock beats Scissors");
-            }
-            else if (playerSelection === "scissors" && computerSelection === "paper") {
-                console.log("You win! Scissors beats Paper");
-                return "win";
-            }
-            else if (playerSelection === computerSelection) {
-                console.log("Tie!");
-            }
-            else {
-                console.log("Invalid Input");
-            }
-        }
-
-        function game() {
-            let wins = 0;
-            const rounds = 5;
-            for (let i = 0; i < rounds; i++){
-                playerSelection = prompt("rock, paper, or scissors?").toLowerCase();
-                const computerSelection = getComputerChoice();
-                let result = playRound(playerSelection, computerSelection);
-                if (result === "win") {
-                    wins++;
-                }
-            }
-            return wins;
-        }
-
-        console.log(game());
-    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="options-container">
+            <button id="rock" class="option">Rock</button>
+            <button id="paper" class="option">Paper</button>
+            <button id="scissors" class="option">Scissors</button>
+        </div>
+        <div class="info">
+            <div class="rounds">Rounds played: </div>
+            <div class="player-wins">Player wins: </div>
+            <div class="computer-wins">Computer wins: </div>
+            <div class="results"></div>
+        </div>
+        <button id="reset">Start Over</button>
+    </div>
+    <footer>
+        Icons provided by <a href="https://icons8.com/">icons8.com</a>
+    </footer>
 </body>
+<script src="script.js"></script>
 </html>
